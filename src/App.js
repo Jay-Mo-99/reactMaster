@@ -30,24 +30,31 @@ function App() {
       <div className="app-nav">
         <h4 >Fridge Master</h4>
       </div>
-      <div className="list">
+      <button onClick={()=>{
+        let copyA = [...title];
+        copyA.sort();
+        titleSetter(copyA);
 
-        <h4>{title[3]} <button onClick={()=> {
-          let copy = title;/**임시 변수에 원본의 값을 대입 */
-          copy[3] = "Chocolate Milk";
-          titleSetter(copy);}}>Update the Ingredient</button></h4>
+      }}>Sort alphabetically</button>
+      <div className="list">
+        <h4>{title[0]} <button onClick={()=> {
+          console.log("Click the button");
+          let copy = [...title];
+          copy = ['Tomato 🍅','Lettuce 🥬','Potato 🥔','Milk 🥛'];
+          titleSetter(copy);
+          }}>Add the emoji to title</button></h4>
         <p>Post by, 1/11</p>
       </div>
       <div className="list">
-        <h4>{title[0] }<span onClick={()=>{likeSetter(like+1)}}>👍</span>{like}</h4>
+        <h4>{title[1] }<span onClick={()=>{likeSetter(like+1)}}>👍</span>{like}</h4>
         <p>Post by, 1/11</p>
       </div>
       <div className="list">
-        <h4>{title[1]}</h4>
+        <h4>{title[2]}</h4>
         <p>Post by, 1/11</p>
       </div>
       <div className="list">
-        <h4> {title[2]}</h4>
+        <h4> {title[3]}</h4>
         <p>Post by, 1/11</p>
       </div>
 
