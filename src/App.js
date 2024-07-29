@@ -15,6 +15,9 @@ function App() {
 
   let[like,likeSetter]=useState(0);
 
+  let[modal,setModal]=useState(false);
+
+
 
   let num = [1,2];
   // let first = num[0];
@@ -22,6 +25,7 @@ function App() {
 
   let[first,second] = [1,2];
 
+  [1,2,3].map();
 
 
 
@@ -54,13 +58,42 @@ function App() {
         <p>Post by, 1/11</p>
       </div>
       <div className="list">
-        <h4> {title[3]}</h4>
+        <h4 onClick={()=>{setModal(!modal)}}> {title[3]}</h4>
+        {/* 삼항연산자 for Modal Page */}
+        {
+          modal == true ? <Modal/> : null
+        }
+        
         <p>Post by, 1/11</p>
       </div>
+
+
 
     </div>
     
   );
 }
+
+/**함수를 변수에 대입해서 component생성  */
+let Component = () => {
+  return <h4>I am component using variable</h4>;
+};
+
+/**1.Component에 대한 함수는 function App 밖에서 짜
+ * 2. return 가로안에 내가 짜고 싶은 코드 덩어리 입력
+ * 3. return에 무언가를 집어넣을 땐 반드시 하나의 tag만 입력해. 
+ * 4. 함수의 이름을 컴포넌트라고 한다. 
+ */
+function Modal(){
+  return(
+      <div className='modal'>
+        <h4>Title</h4>
+        <p>Date</p>
+        <p>Detail Description</p>
+      </div>
+  )
+}
+
+
 
 export default App;
