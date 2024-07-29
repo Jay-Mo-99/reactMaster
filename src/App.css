@@ -2,6 +2,25 @@
   text-align: center;
 }
 
+div{
+  box-sizing:border-box;
+}
+
+.list{
+  padding-left:20px;
+  text-align: left;
+  border-bottom: 1px solid grey;
+}
+
+.app-nav{
+  display:flex;
+  width:100%;
+  background-color: #FF9500;
+  color:white;
+  padding-left:20px;
+
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -27,6 +46,7 @@
 .App-link {
   color: #61dafb;
 }
+
 
 @keyframes App-logo-spin {
   from {
